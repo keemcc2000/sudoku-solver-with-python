@@ -8,7 +8,6 @@ SUBGRID_SIZE = 3
 EMPTY_CELL = 0
 
 class SudokuSolver:
-    @staticmethod
     def solve(board: List[List[int]]) -> bool:
         empty = SudokuSolver.find_empty(board)
         if not empty:
@@ -26,11 +25,9 @@ class SudokuSolver:
 
         return False
 
-    @staticmethod
     def find_empty(board: List[List[int]]) -> Optional[Tuple[int, int]]:
         return next(((i, j) for i in range(GRID_SIZE) for j in range(GRID_SIZE) if board[i][j] == EMPTY_CELL), None)
 
-    @staticmethod
     def is_valid(board: List[List[int]], num: int, pos: Tuple[int, int]) -> bool:
         row, col = pos
 
